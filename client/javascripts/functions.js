@@ -14,3 +14,33 @@ let containsDuplicates = s => {
   }
   return false;
 };
+
+let revWords1 = (sentence) => {
+  let words = sentence.split(" ");
+  let result;
+  for (let i = 0; i < words.length; i++) {
+    result = "";
+    for (let x = words[i].length - 1; x >= 0; x--) {
+      result += words[i][x];
+    }
+    words[i] = result;
+  }
+  return words.join(" ");
+};
+console.log(revWords1("Web App Dev"));
+console.log(revWords1("Delta Echo"));
+
+let revWords2 = (arr) => {
+  let words = arr.split(" ");
+  let temp;
+  arr.forEach(let i = 0; i < arr.length; i++) {
+    temp = "";
+    for (let x = arr[i].length - 1; x >= 0; x--) {
+      temp += words[i][x];
+    }
+    words[i] = temp;
+  }
+  return words.join(" ");
+};
+console.log(revWords2("Web App Dev"));
+console.log(revWords2("Delta Echo"));
