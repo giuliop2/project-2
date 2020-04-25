@@ -5,7 +5,7 @@ let containsDuplicates = s => {
     code;
   for (let i in cArr) {
     code = s[i].toUpperCase().charCodeAt(0) - 65;
-    //console.log(code);
+
     if (cArr[code] > 0) {
       return true;
     } else {
@@ -14,6 +14,9 @@ let containsDuplicates = s => {
   }
   return false;
 };
+console.log(containsDuplicates("Web App Dev"));
+console.log(containsDuplicates("Od or Ev"));
+console.log(containsDuplicates("Nth"));
 
 let revWords1 = (sentence) => {
   let words = sentence.split(" ");
@@ -30,17 +33,28 @@ let revWords1 = (sentence) => {
 console.log(revWords1("Web App Dev"));
 console.log(revWords1("Delta Echo"));
 
-let revWords2 = (arr) => {
-  let words = arr.split(" ");
-  let temp;
-  arr.forEach(let i = 0; i < arr.length; i++) {
-    temp = "";
-    for (let x = arr[i].length - 1; x >= 0; x--) {
-      temp += words[i][x];
-    }
-    words[i] = temp;
+
+let revWords3 = (str) => {
+  let reversed = "";
+  for (var i = str.length - 1; i >= 0; i--) {
+    reversed += str[i];
   }
-  return words.join(" ");
+  return reversed;
 };
+
+console.log(revWords3("Web App Dev"));
+console.log(revWords3("Delta Echo"));
+
+
+
+function revWords2(str) {
+  let reversed = "";
+  str.split("").forEach(function(char) {
+
+    reversed = char + reversed;
+
+  });
+  return reversed;
+}
 console.log(revWords2("Web App Dev"));
 console.log(revWords2("Delta Echo"));
